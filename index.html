@@ -5,7 +5,7 @@
 :root{--bg:#f6f1e8;--paper:#fffaf0;--ink:#253044;--muted:#6b7280;--line:#e6d8bd;--brand:#5c7fbd;--brand-dark:#3f6099;--soft:#eaf0fb;--wrong:#ffe8e2;--right:#e9f7ef;--shadow:0 8px 24px rgba(58,45,20,.10);--radius:18px}
 *{box-sizing:border-box}body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}.sidebar{width:270px;background:#fffdf7;border-right:1px solid var(--line);padding:18px 14px;position:fixed;inset:0 auto 0 0;z-index:20;transform:translateX(0);transition:.25s ease;box-shadow:var(--shadow);overflow:auto}.sidebar.hidden{transform:translateX(-105%)}.side-title{font-size:18px;font-weight:800;margin:0 0 4px}.side-note{color:var(--muted);font-size:13px;margin:0 0 16px;line-height:1.35}.number-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.num-btn{border:1px solid var(--line);background:#fff;border-radius:11px;min-height:36px;font-weight:800;color:var(--ink);cursor:pointer;font-size:12px}.num-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}.num-btn.answered{background:var(--soft);border-color:#b7c9ea}.main{flex:1;margin-left:270px;transition:.25s ease;width:100%}.main.full{margin-left:0}.topbar{position:sticky;top:0;z-index:10;background:rgba(246,241,232,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.top-left{display:flex;align-items:center;gap:10px;min-width:0}.menu-btn{border:1px solid var(--line);background:#fffdf7;color:var(--ink);border-radius:12px;padding:10px 13px;cursor:pointer;font-weight:800}.title-wrap{min-width:0}h1{font-size:20px;margin:0;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.subtitle{color:var(--muted);font-size:13px;margin-top:2px}.progress-text{font-weight:800;font-size:14px;color:var(--brand-dark);white-space:nowrap}.content{max-width:900px;margin:0 auto;padding:26px 18px 36px}.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}.question-meta{color:var(--brand-dark);font-weight:900;margin-bottom:14px;font-size:15px}.question{font-size:20px;line-height:1.55;margin:0 0 10px;cursor:pointer;border-radius:12px;padding:6px}.question:hover{background:#edf2ff}.translation{display:none;margin:0 0 20px;padding:12px 14px;border:1px dashed var(--line);border-radius:14px;background:#fffdf7;color:#475569;line-height:1.5}.translation.show{display:block}.options{display:grid;gap:12px}.option{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;border:1px solid var(--line);background:#fff;padding:14px 15px;border-radius:15px;cursor:pointer;font-size:16px;line-height:1.35;color:var(--ink);transition:.15s ease}.option.selected{background:var(--soft);border-color:var(--brand);box-shadow:0 0 0 2px rgba(92,127,189,.12)}.letter{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#edf2ff;font-weight:900;flex:0 0 26px}.option.selected .letter{background:var(--brand);color:#fff}.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}.primary,.secondary{border:none;border-radius:14px;padding:13px 18px;font-size:16px;font-weight:900;cursor:pointer}.primary{background:var(--brand);color:#fff;min-width:130px}.secondary{background:#fffdf7;border:1px solid var(--line);color:var(--ink)}.hint{margin-top:16px;color:var(--muted);font-size:14px;line-height:1.45}.overlay{position:fixed;inset:0;background:rgba(41,50,65,.36);z-index:15;display:none}.overlay.show{display:block}.result-head{text-align:center;margin-bottom:22px}.score{font-size:44px;font-weight:950;color:var(--brand-dark);margin:8px 0}.review-list{display:grid;gap:14px;margin-top:20px}.review-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.review-card.wrong{background:var(--wrong);border-color:#f2b8a8}.review-card.right{background:var(--right);border-color:#abd9bd}.review-title{font-weight:950;margin-bottom:8px}.review-q{line-height:1.45;margin-bottom:10px}.explain{color:#475569;font-size:14px;line-height:1.45;margin-top:8px}.small-label{font-weight:900}
 @media(max-width:760px){.sidebar{width:84vw;max-width:320px;transform:translateX(-105%)}.sidebar.show{transform:translateX(0)}.sidebar.hidden{transform:translateX(-105%)}.main,.main.full{margin-left:0}.topbar{padding:10px 12px}h1{font-size:17px}.subtitle{font-size:12px}.progress-text{display:none}.content{padding:18px 12px 28px}.card{padding:18px;border-radius:16px}.question{font-size:17px}.option{font-size:15px;padding:13px}.actions{position:sticky;bottom:0;background:linear-gradient(transparent,var(--bg) 20%);padding-top:18px}.primary,.secondary{flex:1;padding:13px 12px}.number-grid{grid-template-columns:repeat(5,1fr)}}
-</style></head><body><div class="overlay" id="overlay"></div><aside class="sidebar" id="sidebar"><p class="side-title">Question Numbers</p><p class="side-note">Tap a number to go back. Blue means answered.</p><div class="number-grid" id="numberGrid"></div></aside><main class="main" id="main"><div class="topbar"><div class="top-left"><button class="menu-btn" id="toggleSidebar">☰</button><div class="title-wrap"><h1>Math Practice - Grade 2</h1><div class="subtitle">30 random questions. Numbers change on every refresh. Tap the question text for Indonesian help.</div></div></div><div class="progress-text" id="progressText">0/30 answered</div></div><div class="content"><section class="card" id="quizCard"></section></div></main><script>
+</style></head><body><div class="overlay" id="overlay"></div><aside class="sidebar" id="sidebar"><p class="side-title">Question Numbers</p><p class="side-note">Tap a number to go back. Blue means answered.</p><div class="number-grid" id="numberGrid"></div></aside><main class="main" id="main"><div class="topbar"><div class="top-left"><button class="menu-btn" id="toggleSidebar">☰</button><div class="title-wrap"><h1>Math Practice - Grade 2</h1><div class="subtitle">30 random text-only questions. Numbers change on every refresh. Tap the question text for Indonesian help.</div></div></div><div class="progress-text" id="progressText">0/30 answered</div></div><div class="content"><section class="card" id="quizCard"></section></div></main><script>
 
 function makeQuestion(q, options, answer, explanation, id_q){
   return { q, options, answer: String(answer), explanation, id_q };
@@ -146,10 +146,11 @@ function genTime(){
   );
 }
 function genWeight(){
-  const mode = pick(["heavier","lighter","same","balance","grams"]);
+  const mode = pick(["heavierKg","lighterKg","sameKg","heavierGrams","lighterGrams","compareObjects"]);
   let f1 = pick(fruits), f2 = pick(fruits);
   while(f2===f1) f2 = pick(fruits);
-  if(mode === "same"){
+
+  if(mode === "sameKg"){
     const w = rand(2,9);
     const ans = "both have the same weight";
     return makeQuestion(
@@ -159,27 +160,39 @@ function genWeight(){
       idHelp("weight")
     );
   }
-  if(mode === "balance"){
+
+  if(mode === "compareObjects"){
+    const heavyObjects = ["school bag","book box","rice bag","toy basket","fruit basket","water bottle"];
+    const lightObjects = ["lunch box","pencil case","small bag","snack box","shoe box","plastic cup"];
+    const obj1 = pick(heavyObjects);
+    let obj2 = pick(lightObjects);
+    let w1 = rand(2,12), w2 = rand(1,10);
+    while(w1 === w2) w2 = rand(1,10);
+    const ask = pick(["heavier","lighter"]);
+    const ans = ask === "heavier" ? (w1>w2 ? obj1 : obj2) : (w1<w2 ? obj1 : obj2);
+    const wrong = ans === obj1 ? obj2 : obj1;
     return makeQuestion(
-      `On a balance, the side with ${f1} goes down and the side with ${f2} goes up. Based on the picture idea, the heavier fruit is …`,
-      uniqueOptions(f1, f2, "both are the same"), f1,
-      "On a balance, the lower side is heavier.",
+      `A ${obj1} weighs ${w1} kg. A ${obj2} weighs ${w2} kg. Based on the story, the ${ask} object is …`,
+      uniqueOptions(ans, wrong, "both are the same"), ans,
+      `Compare ${w1} kg and ${w2} kg.`,
       idHelp("weight")
     );
   }
+
   let w1 = rand(1,9), w2 = rand(1,9);
   while(w1===w2) w2 = rand(1,9);
-  const unit = mode === "grams" ? "grams" : "kg";
-  const ans = mode === "lighter" ? (w1<w2 ? f1 : f2) : (w1>w2 ? f1 : f2);
+  const unit = mode.includes("Grams") ? "grams" : "kg";
+  const ask = mode.includes("lighter") ? "lighter" : "heavier";
+  const ans = ask === "lighter" ? (w1<w2 ? f1 : f2) : (w1>w2 ? f1 : f2);
   const wrong = ans === f1 ? f2 : f1;
-  const word = mode === "lighter" ? "lighter" : "heavier";
   return makeQuestion(
-    `${f1[0].toUpperCase()+f1.slice(1)} weighs ${w1} ${unit}. ${f2[0].toUpperCase()+f2.slice(1)} weighs ${w2} ${unit}. Based on the story, the ${word} fruit is …`,
+    `${f1[0].toUpperCase()+f1.slice(1)} weighs ${w1} ${unit}. ${f2[0].toUpperCase()+f2.slice(1)} weighs ${w2} ${unit}. Based on the story, the ${ask} fruit is …`,
     uniqueOptions(ans, wrong, "both are the same"), ans,
     `Compare ${w1} and ${w2}.`,
     idHelp("weight")
   );
 }
+
 function genGroups(){
   const obj = pick(objects);
   const mode = pick(["sameBoxes","differentBoxes","twoBoxes","plates"]);
